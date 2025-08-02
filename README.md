@@ -30,6 +30,7 @@ PrAViC/
 ├── images/                # Images and visualizations
 ├── losses/                # Custom cross entropy and fast cross entropy implementation
 ├── main.py                # Main script file for training
+├── mypath.py              # Path for dataset UCF101
 └── README.md              # Project documentation
 ```
 ### Running a Demo

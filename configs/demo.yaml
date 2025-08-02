@@ -1,0 +1,28 @@
+name: stats_r3d
+
+exp_params:
+  model_name: R3D_online_v1
+  epochs:
+    FineTune: 300
+    NewPart: 250
+  lr:
+    NewPart: 0.05
+    FineTune: 0.0001
+  min_lr_sheduler: 5.0e-08
+  scheduler: null
+  optimizer: sgd
+  loss: fast_ce 
+  lambda_value: 1
+  train_bs: 20
+  weight_decay: 0 
+  threshold: 0.2
+  seed: null
+
+results:
+  dirs:
+    checkpoint: checkpoint
+    log: logger
+  logger: wandb
+  resume_path: null
+  root: /results
+  save_model: true

@@ -1,0 +1,74 @@
+method: grid
+name: r3d_v1_stats
+metric:
+  goal: maximize
+  name: FineTune_test/ACC
+early_terminate:
+  type: hyperband
+  min_iter: 30
+
+parameters:
+  exp_params.model_name:
+    distribution: constant
+    value: R3D_online_v1
+  exp_params.epochs.FineTune:
+    distribution: constant
+    value: 200
+  exp_params.epochs.NewPart:
+    distribution: constant
+    value: 150
+  exp_params.lr.NewPart:
+    distribution: constant
+    value: 0.05
+  exp_params.lr.FineTune:
+    distribution: constant
+    value: 0.00001
+  exp_params.lambda_value:
+    distribution: categorical
+    values:
+    - 0.1
+    - 0.2
+    - 0.3
+    - 0.4
+    - 0.5
+    - 0.6
+    - 0.7
+    - 0.8
+    - 0.9
+    - 1
+  exp_params.min_lr_sheduler:
+    distribution: constant
+    value: 5.0e-08
+  exp_params.scheduler:
+    distribution: constant
+    value: null
+  exp_params.optimizer:
+    distribution: constant
+    value: sgd
+  exp_params.loss:
+    distribution: constant
+    value: fast_ce
+  exp_params.train_bs:
+    distribution: constant
+    value: 64
+  exp_params.weight_decay:
+    distribution: constant
+    value: 0
+  results.dirs.checkpoint:
+    distribution: constant
+    value: checkpoint
+  results.dirs.log:
+    distribution: constant
+    value: logger
+  results.logger:
+    distribution: constant
+    value: wandb
+  results.resume_path:
+    distribution: constant
+    value: null
+  results.root:
+    distribution: constant
+    value: /results
+  results.save_model:
+    distribution: constant
+    value: false
