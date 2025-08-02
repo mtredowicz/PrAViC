@@ -1,0 +1,12 @@
+# Core requirements
+torch>=1.12
+torchvision>=0.13
+numpy>=1.21
+scikit-learn>=1.0
+opencv-python>=4.5
+PyYAML>=6.0
+tqdm>=4.60
+wandb>=0.15
+
+# Optional (only if using features like plotting or extra file formats)
+# matplotlib>=3.4
